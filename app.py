@@ -11,7 +11,7 @@ from SQLAlchemydb import db
 
 app = Flask(__name__)
 app.secret_key = "queen"
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL?sslmode=require').replace('postgres://', 'postgresql://')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///data.db')
 api = Api(app)
 
 
