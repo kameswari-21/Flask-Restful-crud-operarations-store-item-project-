@@ -10,8 +10,8 @@ from resources.store import Store, StoreList
 from SQLAlchemydb import db
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///database.db')
 app.secret_key = "queen"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL?sslmode=require').replace('postgres://', 'postgresql://')
 api = Api(app)
 
 
